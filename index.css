@@ -1,0 +1,354 @@
+:root {
+  --font-size-base: 16px;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: auto;
+  overflow: auto; 
+  background-color: black;
+}
+
+.favorite-btn {
+  display: inline-block;
+  background-color: #ffcc00; 
+  padding: 10px;
+  margin-top: 5px;
+}
+
+header {
+  text-align: center; 
+  height: 40rem;
+  background-image: url(img/lights.png), url(img/drink-splash-upsidedown.jpeg);
+  background-size: 100%, auto;   
+  background-blend-mode: screen;
+  
+  background-repeat: no-repeat;  
+  background-position: center; 
+  position: relative;
+  padding-top: 5rem;
+
+}
+
+#logo {
+  width: 200px; 
+  height: auto; 
+}
+
+#home-page, 
+#details-page,
+#search-page,
+#favorite-page {
+  display: none;
+}
+
+#home-page.open,
+#details-page.open,
+#search-page.open, 
+#favorite-page.open
+{
+  display: block;
+
+}
+
+.link{
+  cursor: pointer;
+}
+
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  flex-direction: row;
+  align-items: center;
+  padding: 2.3rem 0;
+  height: 2.5rem;
+  backdrop-filter: blur(10px); 
+  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  width: 70%;
+  right: 50%; 
+  transform: translateX(20%); 
+  
+}
+
+
+
+.nav-links a {
+  color: black; 
+  text-decoration: none;
+  padding: 1rem; 
+  font-size: 2rem;
+  font-weight: 555;
+}
+
+.nav-links a:hover {
+  color: white; 
+}
+
+h2 {
+font-size: 2rem; 
+font-weight: 540; 
+
+}
+
+#cocktail-page img {
+  width: 200px;
+  height: auto;
+}
+
+
+
+#cocktail-information {
+  display: none;
+}
+
+#cocktail-ingredients {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+#cocktail-page {
+display: flex; 
+flex-direction: column;
+justify-content: space-around;
+text-align: center;
+align-items: center;
+border-top:  2px solid rgba(192, 90, 7, 0.904); 
+
+background-image: url(img/lights.png),  url(img/drink-splash3.jpeg);
+background-blend-mode: screen;
+background-size: 100%, auto;  
+background-repeat: no-repeat;
+background-position:top center;
+height: 100vh;
+position: relative;
+height: auto;
+padding-left: 2rem;
+
+}
+
+#details-page {
+text-align: left;
+height: auto;
+font-size: 1.5rem;
+max-width: 800px;
+margin: 0 auto;
+padding: 1rem;
+box-sizing: border;
+
+backdrop-filter: blur(10px); 
+  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+
+#details-page img {
+display:block;
+margin: 0 auto;
+height: auto;
+max-width: 500px;
+width: 100%;
+
+}
+
+#details-page p,
+#details-page ul {
+max-width: 500px; 
+line-height: 1.6;
+margin: 0 auto; 
+}
+
+#search-page {
+text-align: left;
+}
+
+#home-page img {
+height: auto; 
+width: 50%;
+}
+
+
+button {
+  background-color: rgba(253, 183, 54, 0.75);
+  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+  border: 2px solid rgba(255, 255, 255, .75);
+  backdrop-filter: blur(10px); 
+padding: 1rem;
+border-radius: 16px; 
+cursor: pointer; 
+}
+
+button:hover {
+background-color: orangered;
+color: white; 
+}
+
+
+
+/* cocktail-cards*/
+
+.hidden-content {
+  visibility: hidden; 
+ 
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.user-cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr); 
+      gap: 1rem;
+      margin-top: 1rem;
+      max-width: 50%;
+}
+
+.card {
+ 
+  border-radius: 8px;
+  
+  backdrop-filter: blur(10px); 
+  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card > .header {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+.card h3 {
+  font-size: 1rem;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.hide {
+  display: none;
+}
+
+
+/* Felmeddelande */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pagination-buttons button {
+  padding: 0.5rem 1rem;
+  
+  backdrop-filter: blur(10px); 
+  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pagination-buttons button:hover {
+  backdrop-filter: blur(10px); 
+  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+.pagination-buttons button.active {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+}
+
+/*FAVORITE PAGE*/
+ul{
+  max-width:200px;
+}
+ul, ul li{
+  padding:0;
+  margin:0;
+  list-style: none;
+}
+ul li{
+  padding:10px;
+  border:1px solid #CCC;
+  margin:-1px 0 0 0;
+}
+ul li a{
+  color:#cb0070;
+  text-decoration:none;
+  float:right;
+}
+
+.favorite-item {
+  display: flex;
+  align-items: left;
+  margin-bottom: 10px;
+}
+
+.favorite-img {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+}
+
+.favorite-name {
+  font-weight: bold;
+  margin-right: 10px;
+  color: black;
+}

@@ -3,10 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exam - Name</title>
+    <meta
+  name="description"
+  content="cocktail recipes for your favorite cocktails">
+    <title>Cocktails a la mode</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <script src="index.js" type="module"></script>
-  </body>
+    <header>
+
+      <nav class="navbar"> 
+        
+          <div class="nav-links" id="nav-links">
+              <a class="link" id="home-link">Home </a>
+              <a class="link" id="search-link">Search</a>
+              <a class="link" id="favorite-link">Favorite</a>
+          </div>
+          <img src="logo.png" alt="Logotyp" id="logo">
+      </nav>
+  </header>
+    <main id="cocktail-page">
+      
+     <section class="open"  id="home-page"> 
+      <h2 class="details-cocktail-name">Home page</h2>
+       <img class="details-cocktail-img" alt="cocktail Image">
+     <p id="cocktail-category"></p> 
+     
+    <button id="random-cocktail-btn">random cocktail</button>
+    <button id="see-more-btn">See more</button>
+    <!-- <button id="favorite-btn" class="favorite-btn">Favorite</button> -->
+    </section>
+ 
+
+    <section id="details-page">
+      <h2 class="details-cocktail-name">Details page</h2>
+    <img class="details-cocktail-img" alt="cocktail Image">
+    <p id="details-cocktail-category"></p>
+    <p id="details-cocktail-glass"></p>
+    <h2>ingredients</h2>
+    <ul id="details-cocktail-ingredients"></ul>
+    <h2>instructions</h2>
+    <p id="details-cocktail-instructions"></p>
+
+    <button type="sumbmit" id="favorite-toggle">Favorite</button>
+    </section>
+
+    <section id="search-page">
+      <div class="search-wrapper">
+        <form id="search-form">
+          <label for="search">Search Cocktails</label>
+          <input type="search" id="search" placeholder="search for cocktail" data-search />
+          
+          <label for="search-type">Search by:</label>
+          <select id="filter-type" data-filter-type>
+            <option value="name">Name</option>
+            <option value="category">Category</option>
+            <option value="glass">Glass Type</option>
+            <option value="ingredient">Ingredient</option>
+          </select>
+          
+          
+        </form>
+        </div>
+      <div class="user-cards" data-user-cards-container></div>
+      <template data-user-template>
+        <div class="card">
+          <div class="header" data-header></div>
+          <div class="body" data-body></div>
+        </div>
+      </template>
+    </section>
+
+    <section id="favorite-page" class="page">
+      <h2>favorites</h2>
+      <div id="favorite-cocktail-container" class="favorite-section"></div>
+      <ul class="favorite-list">
+
+      </ul>
+     
+    </section>
+
+  </main>
+  <script src="index.js" type="module"></script>
+</body>
 </html>
+
